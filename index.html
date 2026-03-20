@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dean's Brewery &amp; Coffee</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+    body { background-color:#0e0b07; color:#e8d8a0; font-family:'Crimson Text',Georgia,serif; }
+    .card-img-top { height:200px; object-fit:cover; }
+    .navbar-dark.bg-dark { background-color:#080603 !important; border-bottom:2px solid #8B0000; padding: 0.5rem 0; }
+    .navbar-brand img { width:100px; height:100px; object-fit:cover; border-radius:50%; border: 2px solid #c9a227; }
+    .nav-link { font-family:'Cinzel',serif; font-size:0.9rem; letter-spacing:0.15em; text-transform:uppercase; color:#c9a227 !important; transition:color 0.2s; }
+    .nav-link:hover { color:#fff !important; }
+    
+    /* Ajustes do Carrossel para imagens reais */
+    .carousel-item { height:500px; position:relative; overflow:hidden; }
+    .slide-img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .slide-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.55); z-index: 1; }
+    .slide-content { position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; color:white; }
+    .slide-content h2 { font-family:'Cinzel',serif; color:#c9a227; text-shadow:0 0 20px rgba(139,0,0,0.8); letter-spacing:0.1em; font-weight: 700; margin-top: 1rem; }
+    .slide-icon { font-size: 3rem; text-shadow: 0 0 15px rgba(201, 162, 39, 0.7); }
+
+    #sobre { background-color:#110e09; }
+    #sobre h2 { font-family:'Cinzel',serif; color:#c9a227; letter-spacing:0.08em; }
+    .sobre-img-container { border:2px solid #8B0000; border-radius:4px; overflow:hidden; box-shadow: 0 0 15px rgba(139,0,0,0.3); }
+    .sobre-img-container img { width:100%; height:auto; display:block; object-fit: cover; }
+    
+    #cardapio { background-color:#0e0b07; }
+    #cardapio h2 { font-family:'Cinzel',serif; color:#c9a227; letter-spacing:0.08em; }
+    .card { background-color:#1a1208; border:1px solid #8B0000; color:#e8d8a0; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); border-color: #c9a227; }
+    .card h5 { font-family:'Cinzel',serif; color:#c9a227; letter-spacing:0.05em; font-weight: 700; }
+    .card p { color:#bba670; font-size: 0.95rem; }
+    .card .fw-bold { color:#c9a227; font-size: 1.1rem; }
+    
+    #contato { background-color:#110e09; }
+    #contato h2 { font-family:'Cinzel',serif; color:#c9a227; letter-spacing:0.08em; }
+    #contato h5 { color:#c9a227; font-family:'Cinzel',serif; }
+    .form-control { background-color:#1a1208 !important; border-color:#8B0000 !important; color:#e8d8a0 !important; }
+    .form-control::placeholder { color:#5a4a28; }
+    .form-control:focus { border-color:#c9a227 !important; box-shadow:none !important; }
+    .btn-primary { background-color:#8B0000; border-color:#8B0000; font-family:'Cinzel',serif; letter-spacing:0.12em; text-transform: uppercase; }
+    .btn-primary:hover { background-color:#a51010; border-color:#a51010; }
+    
+    footer.bg-dark { background-color:#080603 !important; border-top:2px solid #8B0000; font-family:'Cinzel',serif; letter-spacing:0.08em; color: #9a8a60; }
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.jpg" alt="Dean's Brewery &amp; Coffee Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carrossel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="interior.jpg"slide-img alt="Chevy Impala 1967 preto em uma estrada noturna sob lua vermelha">
+                <div class="slide-overlay"></div>
+                <div class="slide-content container">
+                    <span class="slide-icon"></span>
+                    <h2 class="display-4">Cervejaria e Café dos caçadores/h2>
+                    <p class="lead">Forte, preto e sem perguntas.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="ressuscitam.png" class="slide-img" alt="Interior rústico e acolhedor da cervejaria com iluminação quente">
+                <div class="slide-overlay"></div>
+                <div class="slide-content container">
+                    <span class="slide-icon"></span>
+                    <h2 class="display-4">Cerveja que ressuscita</h2>
+                    <p class="lead">Produção artesanal com a alma.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="rock.jpg" class="slide-img" alt="Close-up de um símbolo Devil's Trap no chão iluminado por velas">
+                <div class="slide-overlay"></div>
+                <div class="slide-content container">
+                    <span class="slide-icon"></span>
+                    <h2 class="display-4">Rock clássico e proteção</h2>
+                    <p class="lead">O melhor ambiente para planejar sua próxima 'caçada'.</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrossel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrossel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre Nós</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <p class="lead">Fundado em 2018, o <strong style="color:#c9a227">Dean's Brewery &amp; Coffee</strong> nasceu da obsessão por café honesto, cerveja com caráter e o bom e velho rock'n'roll.</p>
+                    <p>Nossas paredes guardam segredos, mapas com alfinetes e símbolos de proteção. Somos mais que um bar, somos o refúgio preferido para aqueles que sabem que o verdadeiro mal está lá fora (ou apenas para quem aprecia uma bebida excepcional).</p>
+                    <p class="font-italic text-muted">"Saving people, hunting things, the family business... and brewing beer."</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="sobre-img-container">
+                        <img src="sobre.jpg" alt="Detalhes do interior: mapa de caça na parede e café na mesa">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nosso Cardápio</h2>
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="cafédodean.jpg" class="card-img-top" alt="Cappuccino artesanal rústico">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Café do Dean</h5>
+                            <p class="card-text flex-grow-1">Cappuccino forte com caramelo defumado e um toque final de bourbon premium.</p>
+                            <p class="fw-bold mt-3">R$ 7,50</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="lager.jpg" class="card-img-top" alt="Copo de cerveja lager dourada gelada">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Impala Lager</h5>
+                            <p class="card-text flex-grow-1">Clássica American Lager. Dourada, leve, refrescante e perfeita para longas viagens.</p>
+                            <p class="fw-bold mt-3">R$ 14,99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="torta.jpg" class="card-img-top" alt="Fatia de torta de maçã caseira com sorvete">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">"I Love Pie"</h5>
+                            <p class="card-text flex-grow-1">Torta de maçã caseira, receita da família, servida quente com sorvete de baunilha.</p>
+                            <p class="fw-bold mt-3">R$ 18,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="Turducken.jpg" class="card-img-top" alt="Cappuccino artesanal rústico">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Turducken Slammer</h5>
+                            <p class="card-text flex-grow-1">Sanduíche de três aves.</p>
+                            <p class="fw-bold mt-3">R$ 28,50</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="Sanduíche Dagwood.jpg" class="card-img-top" alt="Cappuccino artesanal rústico">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Sanduíche Dagwood</h5>
+                            <p class="card-text flex-grow-1">Camadas generosas de peru, queijo pepper jack (que é um queijo Monterey Jack com pimentas jalapeño), pão e salsicha.</p>
+                            <p class="fw-bold mt-3">R$ 47,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="Swap Meat .jpg" class="card-img-top" alt="Cappuccino artesanal rústico">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Swap Meat </h5>
+                            <p class="card-text flex-grow-1">Cheeseburger com Bacon e Ovo.</p>
+                            <p class="fw-bold mt-3">R$ 35,00</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contato &amp; Localização</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>Venha nos visitar</h5>
+                    <p>Rua dos Caçadores, 67 - Bairro Bunker<br>Lebanon, KS - E.U.A.</p>
+                    <p><strong>Horário:</strong> Terça a Sábado, das 15h às 02h.</p>
+                    <p class="text-muted small">*Não aceitamos cartões com símbolos demoníacos.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Envie um sinal</h5>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Seu Nome (ou Codinome)" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Seu E-mail (Seguro)" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Sua mensagem ou avistamento..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 Dean's Brewery &amp; Coffee. All rights reserved.</p>
+            <p class="small text-muted">"Driver picks the music, shotgun shuts his cakehole."</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
